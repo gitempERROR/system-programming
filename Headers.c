@@ -7,49 +7,61 @@ void main() {
 	char* string2 = malloc(100);
 	char* string_result;
 	float float_result;
-	printf_s("%s\n", doubleToStr(-1514.0));
-	printf_s("%lf\n", strToDouble("-12591.51515"));
-	printf_s("Метод из заголовочного файла stdio.h\n");
-	printf_s("Введите целочисленное число с помощью метода из заголовочного файла stdio.h - ");
+	char* double_input_1 = malloc(100);
+	double double_input_2;
+	printf_s("РњРµС‚РѕРґ РёР· Р·Р°РіРѕР»РѕРІРѕС‡РЅРѕРіРѕ С„Р°Р№Р»Р° stdio.h\n");
+	printf_s("Р’РІРµРґРёС‚Рµ С†РµР»РѕС‡РёСЃР»РµРЅРЅРѕРµ С‡РёСЃР»Рѕ СЃ РїРѕРјРѕС‰СЊСЋ РјРµС‚РѕРґР° РёР· Р·Р°РіРѕР»РѕРІРѕС‡РЅРѕРіРѕ С„Р°Р№Р»Р° stdio.h - ");
 	scanf_s("%d", &a);
 
 	while (1) {
-		printf_s("Выберите действие:\n1 - сложение\n2 - вычитание\n3 - умножение\n4 - деление\n5 - объединение строк\n");
+		printf_s("Р’С‹Р±РµСЂРёС‚Рµ РґРµР№СЃС‚РІРёРµ:\n1 - СЃР»РѕР¶РµРЅРёРµ\n2 - РІС‹С‡РёС‚Р°РЅРёРµ\n3 - СѓРјРЅРѕР¶РµРЅРёРµ\n4 - РґРµР»РµРЅРёРµ\n5 - РѕР±СЉРµРґРёРЅРµРЅРёРµ СЃС‚СЂРѕРє\n6 - РїСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ СЃС‚СЂРѕРєСѓ РІ С‡РёСЃР»Рѕ\n7 - РїСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ С‡РёСЃР»Рѕ РІ СЃС‚СЂРѕРєСѓ\n");
 		scanf_s("%d", &a);
 		switch (a)
 		{
 		case(1):
-			printf_s("Введите значения а и b: ");
+			printf_s("Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёСЏ Р° Рё b: ");
 			scanf_s("%d %d", &a, &b);
 			result = sum(a, b);
 			printf_s("%d\n", result);
 			break;
 		case(2):
-			printf_s("Введите значения а и b: ");
+			printf_s("Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёСЏ Р° Рё b: ");
 			scanf_s("%d %d", &a, &b);
 			result = dif(a, b);
 			printf_s("%d\n", result);
 			break;
 		case(3):
-			printf_s("Введите значения а и b: ");
+			printf_s("Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёСЏ Р° Рё b: ");
 			scanf_s("%d %d", &a, &b);
 			result = mult(a, b);
 			printf_s("%d\n", result);
 			break;
 		case(4):
-			printf_s("Введите значения а и b: ");
+			printf_s("Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёСЏ Р° Рё b: ");
 			scanf_s("%d %d", &a, &b);
 			float_result = divide(a, b);
 			printf_s("%f\n", float_result);
 			break;
 		case(5):
-			printf_s("Введите строку а:\n");
+			printf_s("Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ Р°:\n");
 			getchar();
 			gets(string1);
-			printf_s("Введите строку b:\n");
+			printf_s("Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ b:\n");
 			gets(string2);
 			string_result = concat(string1, string2);
 			printf_s("%s\n", string_result);
+			break;
+		case(6):
+			printf_s("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ: ");
+			getchar();
+			gets(double_input_1);
+			printf_s("%lf\n", strToDouble(double_input_1));
+			break;
+		case(7):
+			printf_s("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ: ");
+			scanf_s("%lf", &double_input_2);
+			printf_s("%s\n", doubleToStr(double_input_2));
+			break;
 		default:
 			break;
 		}
